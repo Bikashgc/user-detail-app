@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 class User {
   final String id;
   final String name;
@@ -18,13 +20,14 @@ class User {
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
+    log(json.toString());
     return User(
       id: json["id"],
       name: json["name"],
-      userName: json["userName"],
+      userName: json["username"],
       email: json["email"],
       address: json["address"],
-      phoneNumber: json["phoneNumber"],
+      phoneNumber: json["phone"],
       website: json["website"],
     );
   }
