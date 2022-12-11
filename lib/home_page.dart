@@ -40,16 +40,29 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text("User details"),
       ),
-      body: ListView.builder(
+      body: ListView.separated(
           itemCount: userList.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Card(
+          padding: EdgeInsets.all(10),
+          separatorBuilder: (context, index) => const SizedBox(
+                width: 10,
+              ),
+          itemBuilder: (context, int index) {
+            return Container(
+              padding: EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 228, 225, 225),
+                  border: Border.all(width: 0),
+                  borderRadius: BorderRadius.circular(10)),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     userList[index].name,
                     style: TextStyle(fontSize: 20),
                   ),
+                  Text(userList[index].address.street),
+                  Text(userList[index].phoneNumber),
+                  Text(userList[index].email),
                 ],
               ),
             );

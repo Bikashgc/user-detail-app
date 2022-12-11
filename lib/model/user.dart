@@ -1,11 +1,13 @@
 import 'dart:developer';
 
+import 'package:fetch_userdetails/model/address.dart';
+
 class User {
-  final String id;
+  final int id;
   final String name;
   final String userName;
   final String email;
-  final String address;
+  final Address address;
   final String phoneNumber;
   final String website;
 
@@ -26,7 +28,7 @@ class User {
       name: json["name"],
       userName: json["username"],
       email: json["email"],
-      address: json["address"],
+      address: Address.fromJson(json["address"]),
       phoneNumber: json["phone"],
       website: json["website"],
     );

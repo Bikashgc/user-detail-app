@@ -10,7 +10,7 @@ class Geo {
   factory Geo.fromJson(Map<String, dynamic> json) {
     return Geo(
       lat: json['lat'],
-      lng: json['ing'],
+      lng: json['lng'],
     );
   }
 }
